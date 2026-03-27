@@ -1,5 +1,5 @@
 "use client"
-
+export const dynamic = 'force-dynamic'
 import {
     Card,
     CardTitle,
@@ -20,7 +20,7 @@ export default function Page() {
 
     const handleMath = async () => {
         try {
-            const res = await fetch(`api/math/${math1}/${math2}`)
+            const res = await fetch(`/api/math/${math1}/${math2}`)
             const data = await res.json()
             setMathTotal(data)
         } catch {
@@ -38,7 +38,9 @@ export default function Page() {
         }
     }
 
-    const total = String(Number(mathTotal[0]) + Number(verbalTotal[0]))
+    const total = mathTotal && verbalTotal && !mathTotal.error && !verbalTotal.error
+        ? String(Number(mathTotal[0]) + Number(verbalTotal[0]))
+        : null
 
     return (
         <div className="flex flex-col items-center gap-8 p-8">
