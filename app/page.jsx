@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useState } from "react"
 
-export default function HomePage() {
+export default function Page() {
 
     const [math1, setMath1] = useState("")
     const [math2, setMath2] = useState("")
