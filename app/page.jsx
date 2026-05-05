@@ -3,7 +3,8 @@ export const dynamic = 'force-dynamic'
 import {
     Card,
     CardTitle,
-    CardContent
+    CardContent,
+    CardDescription
 } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -43,8 +44,11 @@ export default function Page() {
         : null
 
     return (
-        <div className="flex flex-col items-center gap-8 p-8">
-            <h1 className="font-bold text-2xl text-center pt-8 pb-8">SAT Score Calculator</h1>
+        <div className="flex flex-col justify-center items-center gap-8 p-8">
+            <div className="flex item-center justify-center gap-4">
+                <img src="the-dot.png" alt="the dot Logo" className="w-50 h-50 object-contain"/>
+                <h1 className="font-bold text-2xl py-20">SAT Score Calculator</h1>
+            </div>
             <section>
             <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col gap-4">
@@ -79,6 +83,22 @@ export default function Page() {
                 </div>
             </div>
             </section>
+            <div className="grid grid-cols-2 gap-4">
+                <div>
+                    <img src="qrcode.png" alt="QRCode"></img>
+                </div>
+                <Card>
+                    <CardTitle className="p-4">SAT  GED IELTS International study programs</CardTitle>
+                    <CardDescription className="px-4">Location</CardDescription>
+                    <CardContent>
+                        <ul>
+                            <li>MBK Center 5th floor at Mathlogik Tutorial School</li>
+                            <li>Happitat Forestias 5th floor Unit 1501</li>
+                        </ul>
+                        <p className="py-5">Scan QR Code on the left side for more details</p>
+                    </CardContent>
+                </Card>
+            </div>
         </div>
     )
 }
