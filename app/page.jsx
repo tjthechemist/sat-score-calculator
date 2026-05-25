@@ -45,12 +45,12 @@ export default function Page() {
         : null
 
     return (
-        <div className="flex flex-col justify-center items-center gap-8 p-8">
-            <div className="mt-8 text-center items-center">
+        <div className="flex flex-col justify-center items-center gap-8 p-4">
+            <div className="mt-4 text-center items-center">
                 <div className="flex justify-center">
-                    <img src="the-dot.png" alt="the dot Logo" className="w-50 h-50" />
+                    <img src="the-dot.png" alt="the dot Logo" className="w-100 h-100" />
                 </div>
-                <h1 className="text-5xl font-extrabold tracking-tight text-[#001B7A] md:text-6xl">SAT Score Calculator</h1>
+                <h1 className="text-3xl font-extrabold tracking-tight text-[#001B7A] md:text-6xl">SAT Score Calculator</h1>
                 <p className="mt-4 text-lg text-slate-500 md:text-2xl">Calculate your estimated SAT score instantly</p>
             </div>
             <section className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-3">
@@ -61,7 +61,7 @@ export default function Page() {
                                 <Calculator className="h-8 w-8" />
                             </div>
                             <div>
-                                <h2 className="text-4xl font bold text-[#0B2A8A]">Math</h2>
+                                <h2 className="text-4xl font-bold text-[#0B2A8A]">Math</h2>
                                 <p className="mt-1 text-slate-500">Enter the number of correct answers</p>
                             </div>
                         </div>
@@ -78,7 +78,7 @@ export default function Page() {
                                 </label>
                                 <Input type="number" placeholder="Enter score" value={math1} onChange={(e) => setMath1(e.target.value)} className="h-14 rounded-xl text-lg" />
                             </div>
-                            <Button className="h-14 w-full rounded-xl bg-blue-600 text-lg font-semibold hover:bg-blue-700" onClick={handleMath}><Calculator className="mr-2 h-5 w-5"/>Calculate Math Score</Button>
+                            <Button className="h-14 w-full rounded-xl bg-blue-600 font-semibold hover:bg-blue-700" onClick={handleMath}><Calculator className="mr-2 h-5 w-5"/>Calculate Math Score</Button>
                         </div>
                     </CardContent>
                 </Card>
@@ -125,22 +125,22 @@ export default function Page() {
                         <div className="mt-10 space-y-5">
                             <div className="flex h-24 items-center justify-between rounded-2xl border border-slate-200 bg-white px-8">
                                 <span className="text-3xl font-semibold text-slate-800">Math Score</span>
-                                <span>{mathTotal && !mathTotal.error && (<div className="text-5xl font-bold text-blue-600">{mathTotal}</div>)}</span>
+                                <span>{mathTotal && !mathTotal.error && (<div className="text-4xl font-bold text-blue-600">{mathTotal}</div>)}</span>
                             </div>
                         </div>
                         <div>
                             <div className="flex h-24 items-center justify-between rounded-2xl border border-slate-200 bg-white px-8">
                                 <span className="text-3xl font-semibold text-slate-800">Verbal Score</span>
-                                <span>{verbalTotal && !verbalTotal.error &&(<div className="text-5xl font-bold text-blue-600">{verbalTotal}</div>)}</span>
+                                <span>{verbalTotal && !verbalTotal.error &&(<div className="text-4xl font-bold text-blue-600">{verbalTotal}</div>)}</span>
                             </div>
                         </div>
                         <div className="border-t border-dashed border-slate-300 pt-6">
-                            <div className="flex h-32 items-center justify-between rounded-2xl bg-blue-600 px-8 text-white shadow-lg">
+                            <div className="flex h-32 items-center justify-between rounded-2xl bg-blue-600 px-8 py-8 text-white shadow-lg">
                                 <div>
                                     <h3 className="text-4xl font-bold">Total Score</h3>
                                     <p className="mt-2 text-xl">(400 - 1600)</p>
                                 </div>
-                                <span>{mathTotal && !mathTotal.error && verbalTotal && !verbalTotal.error && (<div className="text-6xl font-bold">{total}</div>)}</span>
+                                <span>{mathTotal && !mathTotal.error && verbalTotal && !verbalTotal.error && (<div className="text-4xl font-bold">{total}</div>)}</span>
                             </div>
                         </div>
                     </CardContent>
@@ -158,7 +158,7 @@ export default function Page() {
                                 <p className="mt-3 text-lg text-slate-500"> SAT • GED • IELTS • International Study Programs</p>
                                 <div className="mt-8 space-y-4 text-slate-700">
                                     <div className="flex items-start gap-3">
-                                        <MapPin className="mt-1 h-5 w-5 text-blue-600" />
+                                        <MapPin className="mt-1 h-10 w-10 text-blue-600" />
                                         <p>MBK Center 5th Floor, Zone A, Pathum Wan, Bangkok 10330</p>
                                     </div>
                                     <div className="flex items-center gap-3">
@@ -178,7 +178,7 @@ export default function Page() {
                                 <GraduationCap  className="h-7 w-7 text-blue-600"/>
                             </div>
                             <div>
-                                <h3 className="text-3xl font-bold text-[#0B2A8A]">About the Dot</h3>
+                                <h3 className="text-3xl font-bold text-[#0B2A8A]">About THE DOT</h3>
                                 <p className="mt-3 text-lg leading-relaxed text-slate-500">
                                     We are an education institute that helps students
                                     unlock their potential and achieve their goals.
@@ -207,7 +207,7 @@ export default function Page() {
                 </CardContent>
             </Card>
             <footer className="mt-10 rounded-t-3xl bg-blue-600 py-5 text-center text-white">
-                © 2024 The Dot Education Co., Ltd. All rights reserved.
+                © 2024 THEDOT and Mathlogik Co.,Ltd All rights reserved.
             </footer>
         </div>
     )
