@@ -48,7 +48,7 @@ export default function Page() {
         <div className="flex flex-col justify-center items-center gap-8 p-4">
             <div className="mt-4 text-center items-center">
                 <div className="flex justify-center">
-                    <img src="the-dot.png" alt="the dot Logo" className="w-100 h-100" />
+                    <img src="the-dot-logo.png" alt="the dot Logo" className="w-100" />
                 </div>
                 <h1 className="text-3xl font-extrabold tracking-tight text-[#001B7A] md:text-6xl">SAT Score Calculator</h1>
                 <p className="mt-4 text-lg text-slate-500 md:text-2xl">Calculate your estimated SAT score instantly</p>
@@ -134,13 +134,22 @@ export default function Page() {
                                 <span>{verbalTotal && !verbalTotal.error &&(<div className="text-4xl font-bold text-blue-600">{verbalTotal}</div>)}</span>
                             </div>
                         </div>
-                        <div className="border-t border-dashed border-slate-300 pt-6">
+                        <div className="border-t border-dashed border-slate-300 pt-6 pb-6">
                             <div className="flex h-32 items-center justify-between rounded-2xl bg-blue-600 px-8 py-8 text-white shadow-lg">
-                                <div>
+                                <div className="px-4 py-4">
                                     <h3 className="text-4xl font-bold">Total Score</h3>
-                                    <p className="mt-2 text-xl">(400 - 1600)</p>
+                                    <p className="text-xl">(400 - 1600)</p>
                                 </div>
-                                <span>{mathTotal && !mathTotal.error && verbalTotal && !verbalTotal.error && (<div className="text-4xl font-bold">{total}</div>)}</span>
+                                <span>
+                                    {mathTotal && !mathTotal.error && verbalTotal && !verbalTotal.error ? (
+                                        <div className="text-2xl font-bold text-red-500">
+                                        Out of range score
+                                        </div>
+                                        ) : (
+                                        <div className="text-4xl font-bold mt-4">{total}</div>
+                                        )
+                                    }
+                                </span>
                             </div>
                         </div>
                     </CardContent>
@@ -150,11 +159,11 @@ export default function Page() {
                 <CardContent className="p-8">
                     <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
                         <div className="flex flex-col gap-8 md:flex-row">
-                            <div className="flex h-56 w-56 item center justify-center rounded-2xl bg-slate-100 text-lg font-semibold text-slate-400">
-                                <img src="qrcode.png" alt="QRCode"></img>
+                            <div className="flex items-center justify-center rounded-2xl bg-white ">
+                                <img src="qrcode.png" alt="QRCode" className="items-center justify-center"></img>
                             </div>
                             <div className="flex-1">
-                                <h2 className="text-4xl font-bold text-[#0B2A8A]">THE DOT International Programs</h2>
+                                <h2 className="text-4xl font-bold text-[#0B2A8A] text-center">THE DOT International Programs</h2>
                                 <p className="mt-3 text-lg text-slate-500"> SAT • GED • IELTS • International Study Programs</p>
                                 <div className="mt-8 space-y-4 text-slate-700">
                                     <div className="flex items-start gap-3">
@@ -173,7 +182,7 @@ export default function Page() {
                             </div>
                         </div>
 
-                        <div className="border-l border-slate-200 pl-0 lg:pl-10">
+                        <div className="lg:border-l border-slate-200 pl-0 lg:pl-10">
                             <div className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-100">
                                 <GraduationCap  className="h-7 w-7 text-blue-600"/>
                             </div>
@@ -184,8 +193,7 @@ export default function Page() {
                                     unlock their potential and achieve their goals.
                                 </p>
                             </div>
-                        </div>
-                        <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4">
+                            <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4">
                             {[
                                 {icon: User, label: "Expert Instruction"},
                                 {icon: ClipboardList, label: "Proven Results"},
@@ -202,6 +210,7 @@ export default function Page() {
                                 </div>
                             )
                             })}
+                        </div>
                         </div>
                     </div>
                 </CardContent>
