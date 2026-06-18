@@ -142,11 +142,11 @@ export default function Page() {
                                 </div>
                                 <span>
                                     {mathTotal && !mathTotal.error && verbalTotal && !verbalTotal.error ? (
+                                        <div className="text-4xl font-bold mt-4">{total}</div>
+                                        ) : (
                                         <div className="text-2xl font-bold text-red-500">
                                         Out of range score
                                         </div>
-                                        ) : (
-                                        <div className="text-4xl font-bold mt-4">{total}</div>
                                         )
                                     }
                                 </span>
